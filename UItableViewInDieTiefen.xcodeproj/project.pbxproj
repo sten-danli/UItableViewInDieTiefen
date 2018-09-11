@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		324579852142B91C00B0DB9F /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324579842142B91C00B0DB9F /* DetailTableViewController.swift */; };
+		324579872147FF9B00B0DB9F /* SpecialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324579862147FF9B00B0DB9F /* SpecialTableViewCell.swift */; };
 		32A908A5213EC7FD00DBF971 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A908A4213EC7FD00DBF971 /* AppDelegate.swift */; };
 		32A908A7213EC7FD00DBF971 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A908A6213EC7FD00DBF971 /* ViewController.swift */; };
 		32A908AA213EC7FD00DBF971 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32A908A8213EC7FD00DBF971 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		324579842142B91C00B0DB9F /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		324579862147FF9B00B0DB9F /* SpecialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialTableViewCell.swift; sourceTree = "<group>"; };
 		32A908A1213EC7FD00DBF971 /* UItableViewInDieTiefen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UItableViewInDieTiefen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A908A4213EC7FD00DBF971 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32A908A6213EC7FD00DBF971 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				32A908A6213EC7FD00DBF971 /* ViewController.swift */,
 				324579842142B91C00B0DB9F /* DetailTableViewController.swift */,
 				32A908A8213EC7FD00DBF971 /* Main.storyboard */,
+				324579862147FF9B00B0DB9F /* SpecialTableViewCell.swift */,
 				32A908D5213EC8DB00DBF971 /* RezeptModel.swift */,
 				32A908D7213ECA8700DBF971 /* RezeptData.swift */,
 				32A908AE213EC7FE00DBF971 /* Assets.xcassets */,
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				324579872147FF9B00B0DB9F /* SpecialTableViewCell.swift in Sources */,
 				324579852142B91C00B0DB9F /* DetailTableViewController.swift in Sources */,
 				32A908A7213EC7FD00DBF971 /* ViewController.swift in Sources */,
 				32A908A5213EC7FD00DBF971 /* AppDelegate.swift in Sources */,

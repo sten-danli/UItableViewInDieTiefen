@@ -21,10 +21,14 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         tableView.delegate=self
         
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160
+    }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return tableData.getSection(section: section)
     }
+
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return tableData.rezepte.count
@@ -35,12 +39,18 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SpecialTableViewCell
         let rezept=tableData.rezepte[indexPath.section][indexPath.row]
-        cell.textLabel?.text=rezept.title
+        cell.SpecialTitleLabel.text=rezept.title
+        let counter=rezept.zutaten.count
+        cell.SpecialContentCountLabel.text="\(counter) Zutaten"
+        
+        //cell.textLabel?.text=rezept.title
         return cell
-    
+        /*
+        cell.SpecialTitleLabel.text=tableData[rezept]
+        cell.SpecialContentCountLabel.text=tableData[rezept.zutaten.count]
+ */
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailView" {
