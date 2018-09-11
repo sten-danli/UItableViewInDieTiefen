@@ -18,12 +18,12 @@ class RezeptData{
         rezepte.append([RezeptModle]())
         
         rezepte[0].append(RezeptModle(title: "Diamand", bild: "Diamand", zutaten: ["Salze","Eier","Nuss"]))
-        rezepte[0].append(RezeptModle(title: "Die Diamantspitzhacke", bild: "Diamand", zutaten: ["Salze","Eier","Nuss"]))
+        rezepte[0].append(RezeptModle(title: "Die Diamantspitzhacke", bild: "Diamand", zutaten: ["Endermann","Zombie","Spider"]))
         
         
         rezepte.append([RezeptModle]())
-        rezepte[1].append(RezeptModle(title: "Enderman", bild: "Diamand", zutaten: ["Salze","Eier","Nuss"]))
-        rezepte[1].append(RezeptModle(title: "ErdBlock", bild: "Diamand", zutaten: ["Salze","Eier","Nuss"]))
+        rezepte[1].append(RezeptModle(title: "ErdBlock", bild: "ErdBlock", zutaten: ["Diamand","Ida","Eima"]))
+        rezepte[1].append(RezeptModle(title: "Karate", bild: "Diamand", zutaten: ["Haian Kata","Nidan","Sandan"]))
     }
     
     func getSection(section:Int)->String{

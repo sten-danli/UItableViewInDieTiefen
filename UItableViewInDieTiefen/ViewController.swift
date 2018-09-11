@@ -21,6 +21,11 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         tableView.delegate=self
         
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return tableData.getSection(section: section)
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return tableData.rezepte.count
     }
@@ -34,7 +39,35 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         let rezept=tableData.rezepte[indexPath.section][indexPath.row]
         cell.textLabel?.text=rezept.title
-        
         return cell
+    
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailView" {
+            
+            let indexPath=sender as! IndexPath
+            let rezept=tableData.rezepte[indexPath.section][indexPath.row]
+            let dvc=segue.destination as! DetailTableViewController
+            dvc.detailRezeptData=rezept
+            
+            /*也可以写成这样
+             if let indexPath=tableView.indexPathForSelectedRow{
+             let rezept=tableData.rezepte[indexPath.section][indexPath.row]
+             let dvc=segue.destination as! DetailTableViewController
+             dvc.detailRezeptData=rezept
+             */
+ 
+            /*或是这样
+             let indexPath=tableView.indexPathForSelectedRow
+             let selectedRow=indexPath?.row
+             let rezept=tableData.rezepte[selectedRow!]
+             let dvc=segue.destination as! DetailTableViewController
+             dvc.detailRezeptData=rezept[selectedRow!]
+            */
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toDetailView", sender: indexPath)
     }
 }
