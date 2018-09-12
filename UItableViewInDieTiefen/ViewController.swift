@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+import MessageUI
+class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,7 +22,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
+        return 100
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -44,6 +44,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         cell.SpecialTitleLabel.text=rezept.title
         let counter=rezept.zutaten.count
         cell.SpecialContentCountLabel.text="\(counter) Zutaten"
+        cell.speciaLImg.image=UIImage(named: "\(rezept.bild)")
         
         //cell.textLabel?.text=rezept.title
         return cell
@@ -79,5 +80,28 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "toDetailView", sender: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let mailAction=UITableViewRowAction(style: .default, title: "Mail") { (action:UITableViewRowAction, indexPath:IndexPath) in
+            
+            let rezept=self.tableData.rezepte[indexPath.section][indexPath.row]
+            let composeView=MFMailComposeViewController()
+            composeView.mailComposeDelegate=self
+            composeView.setToRecipients(["lidan1811@gmail.com"])
+            composeView.setSubject("Es Funktiopniert")
+            composeView.setMessageBody("Hi lidan,\nHier ist mein \(rezept.title) Rezept", isHTML: false)
+            
+            if MFMailComposeViewController.canSendMail(){
+                self.present(composeView, animated: true, completion: nil)
+            }else{
+                let alert=UIAlertController(title: "Oh", message: "Mailversand nicht möglich", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:nil))
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+        }
+        mailAction.backgroundColor=UIColor.blue
+        return [mailAction]
     }
 }
