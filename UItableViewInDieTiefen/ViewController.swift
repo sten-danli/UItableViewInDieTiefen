@@ -89,19 +89,22 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             let composeView=MFMailComposeViewController()
             composeView.mailComposeDelegate=self
             composeView.setToRecipients(["lidan1811@gmail.com"])
-            composeView.setSubject("Es Funktiopniert")
-            composeView.setMessageBody("Hi lidan,\nHier ist mein \(rezept.title) Rezept", isHTML: false)
+            composeView.setSubject("Hi From LiDan")
+            composeView.setMessageBody("Hi lidan,\nHier ist mein \(rezept.title) Rezept\nMit Folgenden Rezept Zutaten:\(rezept.zutaten)", isHTML: false)
             
             if MFMailComposeViewController.canSendMail(){
                 self.present(composeView, animated: true, completion: nil)
             }else{
-                let alert=UIAlertController(title: "Oh", message: "Mailversand nicht möglich", preferredStyle: .alert)
+                let alert=UIAlertController(title: "Oh", message: "Mailversand nicht möglich\nMail services are not available", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:nil))
                 self.present(alert, animated: true, completion: nil)
                 
             }
         }
-        mailAction.backgroundColor=UIColor.blue
+        mailAction.backgroundColor=UIColor.red
         return [mailAction]
+    }
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
