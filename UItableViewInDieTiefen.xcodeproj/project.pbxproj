@@ -19,6 +19,7 @@
 		32A908C8213EC7FE00DBF971 /* UItableViewInDieTiefenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A908C7213EC7FE00DBF971 /* UItableViewInDieTiefenUITests.swift */; };
 		32A908D6213EC8DB00DBF971 /* RezeptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A908D5213EC8DB00DBF971 /* RezeptModel.swift */; };
 		32A908D8213ECA8700DBF971 /* RezeptData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A908D7213ECA8700DBF971 /* RezeptData.swift */; };
+		32D92945214DA268002AC721 /* EditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D92944214DA268002AC721 /* EditingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		32A908C9213EC7FE00DBF971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32A908D5213EC8DB00DBF971 /* RezeptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RezeptModel.swift; sourceTree = "<group>"; };
 		32A908D7213ECA8700DBF971 /* RezeptData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RezeptData.swift; sourceTree = "<group>"; };
+		32D92944214DA268002AC721 /* EditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				32A908A6213EC7FD00DBF971 /* ViewController.swift */,
 				324579842142B91C00B0DB9F /* DetailTableViewController.swift */,
 				32A908A8213EC7FD00DBF971 /* Main.storyboard */,
+				32D92944214DA268002AC721 /* EditingViewController.swift */,
 				324579862147FF9B00B0DB9F /* SpecialTableViewCell.swift */,
 				32A908D5213EC8DB00DBF971 /* RezeptModel.swift */,
 				32A908D7213ECA8700DBF971 /* RezeptData.swift */,
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				324579872147FF9B00B0DB9F /* SpecialTableViewCell.swift in Sources */,
+				32D92945214DA268002AC721 /* EditingViewController.swift in Sources */,
 				324579852142B91C00B0DB9F /* DetailTableViewController.swift in Sources */,
 				32A908A7213EC7FD00DBF971 /* ViewController.swift in Sources */,
 				32A908A5213EC7FD00DBF971 /* AppDelegate.swift in Sources */,

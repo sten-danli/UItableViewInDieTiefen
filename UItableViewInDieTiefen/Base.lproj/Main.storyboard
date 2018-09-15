@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -210,7 +211,7 @@
             </objects>
             <point key="canvasLocation" x="1593" y="-1350"/>
         </scene>
-        <!--Detail Table View Controller-->
+        <!--UITableView In Die Tiefen-->
         <scene sceneID="Es8-7b-Whv">
             <objects>
                 <tableViewController id="Kcp-8a-8ex" customClass="DetailTableViewController" customModule="UItableViewInDieTiefen" customModuleProvider="target" sceneMemberID="viewController">
@@ -233,10 +234,66 @@
                             <outlet property="delegate" destination="Kcp-8a-8ex" id="MKr-N0-eJp"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="UITableView In Die Tiefen" id="Du0-1y-H1v">
+                        <rightBarButtonItems>
+                            <barButtonItem title="New" id="Uib-Bt-8zM">
+                                <connections>
+                                    <segue destination="hNx-1T-iWD" kind="show" identifier="" id="DTa-iu-PX1"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Edit" style="plain" id="cMM-Mo-urz">
+                                <connections>
+                                    <action selector="editTapped:" destination="Kcp-8a-8ex" id="QS2-BC-g7W"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editToggle" destination="cMM-Mo-urz" id="Knq-G3-aD1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtq-AX-0lt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1743" y="-564"/>
+        </scene>
+        <!--UITableView In Die Tiefen-->
+        <scene sceneID="wX2-di-nVe">
+            <objects>
+                <viewController id="hNx-1T-iWD" customClass="EditingViewController" customModule="UItableViewInDieTiefen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZP7-jN-WBf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xkt-xJ-1gW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xkt-xJ-1gW" firstAttribute="trailing" secondItem="Ljb-Fk-1Kb" secondAttribute="trailing" id="3kl-wN-fze"/>
+                            <constraint firstItem="Xkt-xJ-1gW" firstAttribute="top" secondItem="Ljb-Fk-1Kb" secondAttribute="top" id="eOV-aK-pes"/>
+                            <constraint firstItem="Xkt-xJ-1gW" firstAttribute="leading" secondItem="Ljb-Fk-1Kb" secondAttribute="leading" id="oxF-al-c1X"/>
+                            <constraint firstItem="Xkt-xJ-1gW" firstAttribute="bottom" secondItem="Ljb-Fk-1Kb" secondAttribute="bottom" id="tNy-WH-qAv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ljb-Fk-1Kb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="UITableView In Die Tiefen" id="A15-Tb-Bq3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9Yj-Ls-ZnZ">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="hNx-1T-iWD" id="c0m-50-N3G"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="Xkt-xJ-1gW" id="YiM-Ub-qLb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TvZ-5s-xmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2552.8000000000002" y="-564.46776611694156"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WhR-0h-tlB">
