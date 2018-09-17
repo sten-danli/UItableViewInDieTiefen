@@ -236,7 +236,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="UITableView In Die Tiefen" id="Du0-1y-H1v">
                         <rightBarButtonItems>
-                            <barButtonItem title="New" id="Uib-Bt-8zM">
+                            <barButtonItem title="Add New Item" id="Uib-Bt-8zM">
                                 <connections>
                                     <segue destination="hNx-1T-iWD" kind="show" identifier="toInsertNewSegue" id="DTa-iu-PX1"/>
                                 </connections>

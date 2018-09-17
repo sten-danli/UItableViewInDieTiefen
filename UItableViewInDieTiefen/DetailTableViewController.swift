@@ -9,12 +9,24 @@
 import UIKit
 
 class DetailTableViewController: UITableViewController {
-
-    @IBOutlet weak var editToggle: UIBarButtonItem!
+    
     var detailRezeptData:RezeptModle!
+    var zutaten=[String]() {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+    
+    @IBOutlet weak var editToggle: UIBarButtonItem!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let okRezept=detailRezeptData{
+            self.title = okRezept.title
+            self.zutaten=okRezept.zutaten
+        }
 
     }
     
@@ -26,9 +38,9 @@ class DetailTableViewController: UITableViewController {
             dvc.saveDelegate={
                 (newEntry) in
                 
-                self.detailRezeptData.zutaten.append(newEntry)
+                self.zutaten.append(newEntry)
                 self.navigationController?.popViewController(animated: true)
-                self.tableView.reloadData()
+                
             }
         }
     }
@@ -59,7 +71,7 @@ class DetailTableViewController: UITableViewController {
 //    einträge löschen
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            detailRezeptData.zutaten.remove(at: indexPath.row)
+          zutaten.remove(at: indexPath.row)
             
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         }
@@ -68,13 +80,13 @@ class DetailTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
    
-        return detailRezeptData.zutaten.count
+        return zutaten.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
-        cell.textLabel?.text=detailRezeptData.zutaten[indexPath.row]
+        cell.textLabel?.text=zutaten[indexPath.row]
 
         return cell
     }
