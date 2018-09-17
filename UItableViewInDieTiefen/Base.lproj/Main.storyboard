@@ -238,7 +238,7 @@
                         <rightBarButtonItems>
                             <barButtonItem title="New" id="Uib-Bt-8zM">
                                 <connections>
-                                    <segue destination="hNx-1T-iWD" kind="show" identifier="" id="DTa-iu-PX1"/>
+                                    <segue destination="hNx-1T-iWD" kind="show" identifier="toInsertNewSegue" id="DTa-iu-PX1"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Edit" style="plain" id="cMM-Mo-urz">
@@ -264,11 +264,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xkt-xJ-1gW">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xkt-xJ-1gW">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES" lookupSuggestion="YES"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -293,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TvZ-5s-xmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2552.8000000000002" y="-564.46776611694156"/>
+            <point key="canvasLocation" x="2588" y="-564"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WhR-0h-tlB">

@@ -18,6 +18,21 @@ class DetailTableViewController: UITableViewController {
 
     }
     
+//    zutaten hinzufügen
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toInsertNewSegue"{
+            let dvc=segue.destination as! EditingViewController
+            dvc.saveDelegate={
+                (newEntry) in
+                
+                self.detailRezeptData.zutaten.append(newEntry)
+                self.navigationController?.popViewController(animated: true)
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     @IBAction func editTapped(_ sender: Any) {
         self.isEditing = !isEditing
         if isEditing{
@@ -38,6 +53,10 @@ class DetailTableViewController: UITableViewController {
     }
     
     
+    
+//
+//
+//    einträge löschen
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             detailRezeptData.zutaten.remove(at: indexPath.row)
@@ -59,4 +78,5 @@ class DetailTableViewController: UITableViewController {
 
         return cell
     }
+    
 }
